@@ -1,0 +1,59 @@
+{{!< default}}
+{{#post}}
+
+{{! Article | Post wrap: }}<article role="article" itemscope itemtype="http://schema.org/BlogPosting" class="postwrap_nix">
+
+{{! Post top: }}<div class="posttop_nix nixclear">
+{{! Post info: }}<div class="postinfo_nix">
+{{! Article time:/ }}<time datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished"><i class="nix_icon-calendar"></i> &nbsp; {{date format='dddd DD MMM YYYY'}}</time>
+</div>{{! /Post info }}
+</div>{{! /Post top }}
+
+{{! Article header:/ }}<header class="titlewrap_nix">
+{{! Article headline:/ }}<h1 class="posttitle_nix" itemprop="headline"><a href="{{{url}}}" rel="bookmark">{{{title}}}</a></h1>
+</header>{{! /Article header }}
+
+{{! Article body: }}<div class="postinner_nix nixclear" itemprop="articleBody">
+
+{{{content}}}
+
+<hr />
+
+{{#if tags}}
+<p class="tags_nix"><i class="nix_icon-tag"></i> {{tags separator=" | "}}</p>
+{{/if}}
+
+<h4 class="share_nix">Share this post: &nbsp;</h4>
+<a class="share_nix nix_icon-twitter" target="_blank" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"><span class="nixhidethis">Twitter</span></a>
+<a class="share_nix nix_icon-facebook" target="_blank" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}"><span class="nixhidethis">Facebook</span></a>
+<a class="share_nix nix_icon-gplus" target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}"><span class="nixhidethis">Google+</span></a>
+
+{{! TO USE THIS SECTION FOR COMMENTS INTEGRATION, DELETE THIS LINE AND THE LINE INDICATED BELOW
+<hr />
+<section class="comments_nix" itemscope itemtype="http://schema.org/UserComments">
+>>>PLACE YOUR COMMENTS INTEGRATION CODE HERE<<<
+</section>
+DELETE THIS LINE TO USE THIS COMMENTS SECTION}}
+
+</div>{{! /Article body }}
+
+{{! Post bottom:/ }}<div class="postbottom_nix"></div>
+</article>{{! /Article | Post wrap }}
+
+{{#if author}}
+<div class="subwrap_nix"><div class="subtop_nix"></div>
+{{! Article footer: }}<footer class="post_footer_nix">
+{{! Author info: }}<address itemscope itemtype="https://schema.org/Person">
+{{#if author.image}}<div class="authorimage_nix"><img src="{{author.image}}" itemprop="image" /></div>{{/if}}
+<h4 class="nix_author">{{#unless author.image}}<i class="nix_icon-user"></i>{{/unless}}<span itemprop="author">{{author.name}}</span></h4>
+{{#if author.website}}<p><a href="{{author.website}}" itemprop="url" target="_blank" rel="author">{{author.website}}</a></p>{{/if}}
+{{#if author.location}}<p itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">{{author.location}}</span></p>{{/if}}
+</address>
+<div class="author_nix">
+<p>{{author.bio}}</p>
+</div>{{! /Author info }}
+</footer>{{! /Article footer }}
+</div>
+{{/if}}
+
+{{/post}}

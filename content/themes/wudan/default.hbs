@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+{{! Document Settings: }}<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+{{! Page Meta: }}<title>{{meta_title}}</title>
+<meta name="description" content="{{meta_description}}" />
+{{! Responsive Meta Tags: }}<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+{{! Styles: }}<link href='http://fonts.googleapis.com/css?family=Open+Sans:700italic,700,300italic,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+
+{{! Scripts: }}<script type='text/javascript' src='/assets/js/all.min.js'></script>
+
+{{! Ghost outputs important style and meta data with this tag: }}{{ghost_head}}
+</head>
+<body class="{{body_class}}">
+{{! Site wrapper: }}<div class='sitewrap_nix'>
+
+{{! Document header: }}<header class="header_nix" role='banner' itemscope itemtype='http://schema.org/WPHeader'>
+{{#if @blog.logo}}<a class="logo_nix" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+<h1 class="nix_blogtitle"><a title="{{@blog.title}}" href='{{@blog.url}}'>{{{@blog.title}}}</a></h1>
+<p class="nix_blogdescription"><a title="{{@blog.title}}" href='{{@blog.url}}'>{{@blog.description}}</a></p>
+</header>{{! /Document header }}
+{{! Decorative header bottom:/ }}<div class="headerbottom_nix"></div>
+
+{{! Document main:/ }}<main class="nixclear">{{{body}}}</main>
+
+{{! Document footer: }}<footer class="footer_nix" itemscope itemtype='https://schema.org/WPFooter'>
+<div class="subscribe_nix"><a href="{{@blog.url}}/rss/" title="Subscribe!"><i class="nix_icon-rss"></i></a></div>
+<div class="footertext_nix">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</div>
+<div class="footertext_nix">Proudly published with <a class="icon-ghost" href="http://tryghost.org">Ghost</a></div>
+</footer>{{! /Document footer }}
+
+</div>{{! /Site wrapper }}
+{{! Ghost outputs important scripts and data with this tag }}{{ghost_foot}}
+<script language="javascript" type="text/javascript">
+responsive_iframes();
+</script>
+</body>
+</html>
