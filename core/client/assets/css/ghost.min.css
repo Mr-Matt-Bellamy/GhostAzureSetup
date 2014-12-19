@@ -276,6 +276,10 @@
 .icon-lightning:before {
   content: '\e03d'; }
 
+.indenter {
+  text-indent: 20px;
+}
+
 @-webkit-keyframes fade-in {
   /* line 15, /Users/MBellamy/Development/Ghost/GhostAzureSetup/core/client/assets/sass/modules/animations */
   from {
